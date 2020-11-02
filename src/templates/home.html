@@ -1,0 +1,18 @@
+
+{% extends "base.html" %}
+
+{% load i18n %}
+{% block head_title %}{% trans "Home" %}{% endblock %}
+
+{% block content %}
+
+<h1>{% trans "Home" %}</h1>
+
+{% if user.is_authenticated %}
+    <p>You are connected as {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+{% else %}
+    <p>Please Log In or Sign Up to enjoy this amazing App!</p>
+{% endif %}
+
+{% endblock %}
